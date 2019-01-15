@@ -1,0 +1,50 @@
+<head>
+	<title>bookers</title>
+	<meta name="csrf-param" content="authenticity_token">
+	<meta name="csrf-token" content="iSPZMUGl7Yket9JYKd4SShrnbjBm/0tc9mJNqc60k3Ee2R4v1yYf0PAnR0ZLPhAE3r44LPAw6qBwYYXzgDcQ6A==">
+</head>
+<body>
+	<h1>Books</h1>
+	<table style="table-layout: fixed;">
+		<thead>
+			<tr>
+				<th class="title-size">Title</th>
+				<th class="body-size">Body</th>
+				<th class="icon-size"colspan="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @books.each do |book| %>
+				<tr>
+					<td><%= book.title %></td>
+					<td><%= book.body %></td>
+					<td><%= link_to "Show", booker_path(book),id: "g" %></td>
+					<td><%= link_to "Edit", edit_booker_path(book),id: "g" %></td>
+					<td><%= link_to "Destroy",  booker_path(book), method: :delete,id: "g" %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+		<section class="main-new_book">
+			<div class="main-new_book-content">
+
+				<h2>New book</h2>
+
+				<%= form_for(@book) do |f| %>
+				 <div class="field">
+				 	<h4>Title</h4>
+				    <%= f.text_field :title %>
+				 </div>
+				 <div class="field">
+				 	<h4>Body</h4>
+				    <%= f.text_area :body %>
+				 </div>
+				 <div class="field">
+				 	<%= f.submit 'Create Book' %>
+				 </div>
+				<% end %>
+			</div>
+		</section>
+	</div>
+</main>
+</body>
