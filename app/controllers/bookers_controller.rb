@@ -14,8 +14,11 @@ end
 
   def create
   		book = Booker.new(booker_params)
-        book.save
+        
+        if book.save
+      flash[:notice] = "successfully"
         redirect_to bookers_path
+    	end
   end
 
   def edit
@@ -24,8 +27,10 @@ end
 
   def update
     book = Booker.find(params[:id])
-    book.update(blog_params)
-    redirect_to booker_path
+    if book.update(booker_params)
+      flash[:notice] = "successfully"
+        redirect_to booker_path(book)
+    end
   end
 
   def destroy

@@ -3,15 +3,15 @@
 <%= form_for(@book) do |f| %>
     <div class="field">
     	<h4>Title</h4>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "book_title" %>
     </div>
     <div class="field">
     	<h4>Body</h4>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "book_body" %>
     </div>
     <div class="field">
     	<%= f.submit 'Update Book' %>
     </div>
 <% end %>
-<%= link_to "Show", booker_path(@book),id: "g" %> |
-<%= link_to "Back", bookers_path,id: "g" %>
+<%= link_to "Show", booker_path(@book), class: "show_#{:id}" %> |
+<%= link_to "Back", bookers_path, class: "back" %>
