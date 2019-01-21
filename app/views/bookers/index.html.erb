@@ -23,9 +23,9 @@
 				<tr>
 					<td><%= book.title %></td>
 					<td><%= book.body %></td>
-					<td><%= link_to "Show", booker_path(book), class: "show_#{:id}" %></td>
-					<td><%= link_to "Edit", edit_booker_path(book), class: "edit_#{:id}" %></td>
-					<td><%= link_to "Destroy",  booker_path(book), method: :delete, class: "destroy_#{:id}" %></td>
+					<td><%= link_to "Show", booker_path(book), class: "show_#{book.id}" %></td>
+					<td><%= link_to "Edit", edit_booker_path(book), class: "edit_#{book.id}" %></td>
+					<td><%= link_to "Destroy",  booker_path(book), method: :delete, class: "destroy_#{book.id}" %></td>
 				</tr>
 			<% end %>
 		</tbody>
