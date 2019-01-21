@@ -17,7 +17,7 @@ end
         
         if book.save
       flash[:notice] = "successfully"
-        redirect_to bookers_path
+        redirect_to booker_path(book)
     	end
   end
 
